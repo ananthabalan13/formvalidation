@@ -2,7 +2,6 @@ let btn = document.getElementById('btn');
 btn.addEventListener('click', validateInputs);
 
 let error = document.querySelectorAll('.error');
-console.log(error);
 
 function validateInputs() {
     let usernameInput = document.getElementById('username');
@@ -11,7 +10,7 @@ function validateInputs() {
     let passInput = document.getElementById('password');
     let cpassInput = document.getElementById('cpassword');
 
-    let usernameVal = usernameInput.value.trim();
+    let usernameVal = usernameInput.value.trim();    
     let emailVal = emailInput.value.trim();
     let mobNumVal = mobNumInput.value.trim();
     let passVal = passInput.value.trim();
@@ -25,6 +24,7 @@ function validateInputs() {
     }
      else {
         setSuccess(usernameInput);
+        usernameVal=''
     }
     if(emailVal===''){
         setError(emailInput,'Please Enter Email Address')
@@ -61,7 +61,7 @@ function validateInputs() {
     }
     else{
         setSuccess(cpassInput)
-    }
+    } 
 }
 
 function setSuccess(element){
@@ -86,6 +86,7 @@ function emailValidation (emailVal){
         /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
       );
 }
+  
 
 
 
